@@ -1,0 +1,248 @@
+{
+  "id": "50b07467-0ce4-4588-9649-8adb43374f7a",
+  "name": "自动保存测试 副本 副本",
+  "nodes": [
+    {
+      "id": "n_221a68f5",
+      "type": "video",
+      "name": "视频 1",
+      "position": {
+        "x": 1267.3676297864488,
+        "y": -83.86217481520298
+      },
+      "width": 420,
+      "params": {
+        "prompt": "人物：【小林@男2妈妈.png 】【黄想@Nathan-女主的丈夫.png  】\n音色：【黄想的音色@人魔.mp3 】\n镜头1，黄想推着车看向小林微笑(英国口腔说着中文)说：“你好漂亮”\n切镜头：女人回头看向黄想(英国口腔说着中文)微微歪着头说：“谢谢夸奖”\n浅景深效果，",
+        "model": "seedance-2.5",
+        "modelName": "即梦 Seedance 2.5",
+        "ratio": "16:9",
+        "resolution": "480P",
+        "duration": 6,
+        "mode": "全能参考",
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "video",
+          "resourceId": "398a6422-1669-42eb-8390-27770074b90d",
+          "url": "/api/assets/398a6422-1669-42eb-8390-27770074b90d.svg",
+          "kind": "video",
+          "mime": "image/svg+xml",
+          "mock": true
+        }
+      ],
+      "status": "success",
+      "progress": 100
+    },
+    {
+      "id": "n_d3279389",
+      "type": "media",
+      "name": "男2妈妈.png",
+      "position": {
+        "x": 444.99199999999996,
+        "y": 230.7024
+      },
+      "width": 340,
+      "params": {
+        "url": "/api/assets/d6594bc2-55c0-4e23-ac61-e2369463d0bf.png",
+        "mime": "image/png",
+        "name": "男2妈妈.png"
+      },
+      "outputs": [
+        {
+          "name": "image",
+          "resourceId": "d6594bc2-55c0-4e23-ac61-e2369463d0bf",
+          "url": "/api/assets/d6594bc2-55c0-4e23-ac61-e2369463d0bf.png",
+          "kind": "image"
+        }
+      ],
+      "status": "skipped",
+      "progress": 0
+    },
+    {
+      "id": "n_b1ee0ccf",
+      "type": "media",
+      "name": "人魔.mp3",
+      "position": {
+        "x": 471.8592,
+        "y": 605.3168000000002
+      },
+      "width": 340,
+      "params": {
+        "url": "/api/assets/7c0e6ed2-9933-4b7d-8438-9f5adfb752bb.mp3",
+        "mime": "audio/mpeg",
+        "name": "人魔.mp3"
+      },
+      "outputs": [
+        {
+          "name": "audio",
+          "resourceId": "7c0e6ed2-9933-4b7d-8438-9f5adfb752bb",
+          "url": "/api/assets/7c0e6ed2-9933-4b7d-8438-9f5adfb752bb.mp3",
+          "kind": "audio"
+        }
+      ],
+      "status": "skipped",
+      "progress": 0
+    },
+    {
+      "id": "n_4afdee19",
+      "type": "media",
+      "name": "Nathan-女主的丈夫.png",
+      "position": {
+        "x": 437.0784000000001,
+        "y": -110.8864
+      },
+      "width": 340,
+      "params": {
+        "url": "/api/assets/d0213a94-6c0e-47c2-a5b5-3266e8969fc0.png",
+        "mime": "image/png",
+        "name": "Nathan-女主的丈夫.png"
+      },
+      "outputs": [
+        {
+          "name": "image",
+          "resourceId": "d0213a94-6c0e-47c2-a5b5-3266e8969fc0",
+          "url": "/api/assets/d0213a94-6c0e-47c2-a5b5-3266e8969fc0.png",
+          "kind": "image"
+        }
+      ],
+      "status": "skipped",
+      "progress": 0
+    },
+    {
+      "id": "n_a8366ce4",
+      "type": "video",
+      "name": "视频 1 副本",
+      "position": {
+        "x": 1264.8339717182218,
+        "y": 217.72928272531442
+      },
+      "width": 420,
+      "params": {
+        "prompt": "人物：【小林@男2妈妈.png 】【黄想@Nathan-女主的丈夫.png 】\n音色：【黄想的音色@人魔.mp3 】\n镜头1，黄想推着车看向小林微笑(英国口腔说着中文)说：“你好漂亮”\n切镜头：女人回头看向黄想(英国口腔说着中文)微微歪着头说：“谢谢夸\n\n\n\n\n\n\n奖”\n浅景深效果，",
+        "model": "seedance-2.5",
+        "modelName": "即梦 Seedance 2.5",
+        "ratio": "16:9",
+        "resolution": "480P",
+        "duration": 6,
+        "mode": "全能参考",
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "video",
+          "resourceId": "4d5987ef-1318-498a-a355-9ced29dd68de",
+          "url": "/api/assets/4d5987ef-1318-498a-a355-9ced29dd68de.svg",
+          "kind": "video",
+          "mime": "image/svg+xml",
+          "mock": true
+        }
+      ],
+      "status": "success",
+      "progress": 100,
+      "taskId": null,
+      "error": null
+    },
+    {
+      "id": "n_8db36314",
+      "type": "video",
+      "name": "视频 1 副本 2",
+      "position": {
+        "x": 1263.0963032367358,
+        "y": 474.9641828672359
+      },
+      "width": 420,
+      "params": {
+        "prompt": "人物：【小林@男2妈妈.png 】【黄想@Nathan-女主的丈夫.png 】\n音色：【黄想的音色@人魔.mp3 】\n镜头1，黄想推着车看向小林微笑(英国口腔说着中文)说：“你好漂亮”\n切镜头：女人回头看向黄想(英国口腔说着中文)微微歪着头说：“谢谢夸\n\n\n\n\n\n\n奖”\n浅景深效果，",
+        "model": "seedance-2.5",
+        "modelName": "即梦 Seedance 2.5",
+        "ratio": "16:9",
+        "resolution": "480P",
+        "duration": 6,
+        "mode": "全能参考",
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "video",
+          "resourceId": "66977d75-daff-411f-b0af-a91d0ea2452a",
+          "url": "/api/assets/66977d75-daff-411f-b0af-a91d0ea2452a.svg",
+          "kind": "video",
+          "mime": "image/svg+xml",
+          "mock": true
+        }
+      ],
+      "status": "success",
+      "progress": 100,
+      "taskId": null,
+      "error": null
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_a71da3fa",
+      "source": "n_d3279389",
+      "target": "n_221a68f5",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_aab05ba3",
+      "source": "n_b1ee0ccf",
+      "target": "n_221a68f5",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_260e8317",
+      "source": "n_d3279389",
+      "target": "n_a8366ce4",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_4d3e66be",
+      "source": "n_b1ee0ccf",
+      "target": "n_a8366ce4",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_4e8e9a65",
+      "source": "n_4afdee19",
+      "target": "n_a8366ce4",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_5c15e4d9",
+      "source": "n_4afdee19",
+      "target": "n_221a68f5",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_f3b339bb",
+      "source": "n_d3279389",
+      "target": "n_8db36314",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_d4fe2886",
+      "source": "n_b1ee0ccf",
+      "target": "n_8db36314",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_a3363e52",
+      "source": "n_4afdee19",
+      "target": "n_8db36314",
+      "sourcePort": "out",
+      "targetPort": "in"
+    }
+  ],
+  "createdAt": 1789574747976,
+  "updatedAt": 1789574747976
+}

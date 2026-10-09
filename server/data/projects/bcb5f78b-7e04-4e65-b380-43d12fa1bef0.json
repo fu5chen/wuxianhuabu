@@ -1,0 +1,99 @@
+{
+  "id": "bcb5f78b-7e04-4e65-b380-43d12fa1bef0",
+  "name": "未命名项目",
+  "nodes": [
+    {
+      "id": "n_9b832feb",
+      "type": "image",
+      "name": "图片 1",
+      "position": {
+        "x": 330,
+        "y": 300
+      },
+      "width": 340,
+      "params": {
+        "prompt": "一只橘猫",
+        "model": "jimeng-4.6",
+        "modelName": "即梦图片4.6",
+        "ratio": "1:1",
+        "size": "2K",
+        "count": 1,
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "out",
+          "resourceId": "r1",
+          "url": "/api/assets/gen1.png",
+          "kind": "image",
+          "mime": "image/png"
+        }
+      ],
+      "status": "idle",
+      "progress": 0,
+      "lastRunAt": 1789624602461,
+      "history": [
+        {
+          "name": "out",
+          "resourceId": "h1",
+          "url": "/api/assets/h1.png",
+          "kind": "image",
+          "mime": "image/png",
+          "ts": 1
+        },
+        {
+          "name": "out",
+          "resourceId": "h2",
+          "url": "/api/assets/h2.png",
+          "kind": "image",
+          "mime": "image/png",
+          "ts": 2
+        },
+        {
+          "name": "out",
+          "resourceId": "h3",
+          "url": "/api/assets/h3.png",
+          "kind": "image",
+          "mime": "image/png",
+          "ts": 3
+        }
+      ]
+    },
+    {
+      "id": "n_5b15ce4e",
+      "type": "image",
+      "name": "图片 1 副本",
+      "position": {
+        "x": 370,
+        "y": 340
+      },
+      "width": 340,
+      "params": {
+        "prompt": "一只黑猫",
+        "model": "jimeng-4.6",
+        "modelName": "即梦图片4.6",
+        "ratio": "1:1",
+        "size": "2K",
+        "count": 1,
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "out",
+          "resourceId": null,
+          "url": null
+        }
+      ],
+      "status": "idle",
+      "progress": 0,
+      "lastRunAt": 1789624604605,
+      "taskId": null,
+      "error": null,
+      "history": [],
+      "lastRunKey": "[\"一只黑猫\",null,\"\"]"
+    }
+  ],
+  "edges": [],
+  "createdAt": 1789624608135,
+  "updatedAt": 1789624608157
+}

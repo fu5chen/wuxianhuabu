@@ -1,0 +1,39 @@
+{
+  "id": "c6adf647-7e41-4df1-9cdc-e6f925708c94",
+  "name": "未命名项目",
+  "nodes": [
+    {
+      "id": "n_e7857e84",
+      "type": "video",
+      "name": "视频 1",
+      "position": {
+        "x": 300,
+        "y": 200
+      },
+      "width": 420,
+      "params": {
+        "prompt": "让猫动起来",
+        "model": "seedance-2.0",
+        "modelName": "即梦 Seedance 2.0",
+        "ratio": "16:9",
+        "resolution": "720P",
+        "duration": 4,
+        "mode": "全能参考",
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "video",
+          "resourceId": null,
+          "url": null
+        }
+      ],
+      "status": "running",
+      "progress": 40,
+      "taskId": "t-1"
+    }
+  ],
+  "edges": [],
+  "createdAt": 1789626736002,
+  "updatedAt": 1789626736024
+}

@@ -1,0 +1,103 @@
+{
+  "id": "ab605a28-15a9-4ea1-a1f6-d8c30fa0103f",
+  "name": "自动保存测试",
+  "nodes": [
+    {
+      "id": "n_221a68f5",
+      "type": "video",
+      "name": "视频 1",
+      "position": {
+        "x": 1340.7456,
+        "y": 49.462399999999974
+      },
+      "width": 420,
+      "params": {
+        "prompt": "",
+        "model": "seedance-2.0",
+        "modelName": "即梦 Seedance 2.0",
+        "ratio": "16:9",
+        "resolution": "720P",
+        "duration": 4,
+        "mode": "全能参考",
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "video",
+          "resourceId": null,
+          "url": null
+        }
+      ],
+      "status": "idle",
+      "progress": 0
+    },
+    {
+      "id": "n_d3279389",
+      "type": "media",
+      "name": "男2妈妈.png",
+      "position": {
+        "x": 374,
+        "y": 245
+      },
+      "width": 340,
+      "params": {
+        "url": "/api/assets/d6594bc2-55c0-4e23-ac61-e2369463d0bf.png",
+        "mime": "image/png",
+        "name": "男2妈妈.png"
+      },
+      "outputs": [
+        {
+          "name": "image",
+          "resourceId": "d6594bc2-55c0-4e23-ac61-e2369463d0bf",
+          "url": "/api/assets/d6594bc2-55c0-4e23-ac61-e2369463d0bf.png",
+          "kind": "image"
+        }
+      ],
+      "status": "skipped",
+      "progress": 0
+    },
+    {
+      "id": "n_89cc1af2",
+      "type": "image",
+      "name": "图片 3",
+      "position": {
+        "x": 893,
+        "y": 181
+      },
+      "width": 340,
+      "params": {
+        "prompt": "@男2妈妈.png ",
+        "model": "jimeng-4.0",
+        "modelName": "即梦图片4.0",
+        "ratio": "3:4",
+        "size": "1K",
+        "count": 1,
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "image",
+          "resourceId": "6a545df2-c1e0-424a-bc35-91ffb48fd867",
+          "url": "/api/assets/6a545df2-c1e0-424a-bc35-91ffb48fd867.jpg",
+          "kind": "image",
+          "mime": "image/jpeg",
+          "mock": false
+        }
+      ],
+      "status": "success",
+      "progress": 100,
+      "taskId": "857315215895972913"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_913dd01e",
+      "source": "n_d3279389",
+      "target": "n_89cc1af2",
+      "sourcePort": "out",
+      "targetPort": "in"
+    }
+  ],
+  "createdAt": 1789559346616,
+  "updatedAt": 1789564767995
+}

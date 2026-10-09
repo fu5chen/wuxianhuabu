@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#41295a"/><stop offset="0.55" stop-color="#2f0743"/><stop offset="1" stop-color="#642b73"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#g)"/>
+  <circle cx="748.8000000000001" cy="129.6" r="118.8" fill="#ffffff" fill-opacity="0.10"/>
+  <circle cx="192" cy="421.2" r="86.4" fill="#ffffff" fill-opacity="0.08"/>
+  
+  <circle cx="480" cy="270" r="26" fill="none" stroke="#ffffff" stroke-opacity="0.85" stroke-width="4" stroke-dasharray="40 130">
+    <animateTransform attributeName="transform" type="rotate" from="0 480 270" to="360 480 270" dur="1.6s" repeatCount="indefinite"/>
+  </circle>
+  <text x="480" y="262" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="30" fill="#ffffff" fill-opacity="0.95">赛博朋克城市夜景</text>
+  <text x="480" y="300" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="17" fill="#ffffff" fill-opacity="0.7">文生视频 · 即梦 Seedance 2.0 · 720P · 4s · 模拟预览</text>
+</svg>

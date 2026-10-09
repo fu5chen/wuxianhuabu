@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a2a6c"/><stop offset="0.55" stop-color="#b21f1f"/><stop offset="1" stop-color="#fdbb2d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#g)"/>
+  <circle cx="798.72" cy="245.76" r="225.28" fill="#ffffff" fill-opacity="0.10"/>
+  <circle cx="204.8" cy="798.72" r="163.84" fill="#ffffff" fill-opacity="0.08"/>
+  
+  <text x="512" y="504" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="56" fill="#ffffff" fill-opacity="0.95">未命名图像</text>
+  <text x="512" y="542" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="33" fill="#ffffff" fill-opacity="0.7">图片 5.0 Lite · 1:1 · 2K</text>
+</svg>

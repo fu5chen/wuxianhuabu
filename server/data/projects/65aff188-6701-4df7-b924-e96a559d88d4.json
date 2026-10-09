@@ -1,0 +1,377 @@
+{
+  "id": "65aff188-6701-4df7-b924-e96a559d88d4",
+  "name": "自动保存测试 副本",
+  "nodes": [
+    {
+      "id": "n_1be995fc",
+      "type": "image",
+      "name": "图片 1",
+      "position": {
+        "x": -79.81301302886422,
+        "y": -49.33106985779183
+      },
+      "width": 340,
+      "params": {
+        "prompt": "写实风格，男人在酒吧喝酒",
+        "model": "jimeng-4.0",
+        "modelName": "即梦图片4.0",
+        "ratio": "16:9",
+        "size": "1K",
+        "count": 1,
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "image",
+          "resourceId": "8d644019-738b-45cf-b096-1c2e7b20ea15",
+          "url": "/api/assets/8d644019-738b-45cf-b096-1c2e7b20ea15.jpg",
+          "kind": "image",
+          "mime": "image/jpeg",
+          "mock": false
+        }
+      ],
+      "status": "success",
+      "progress": 100,
+      "taskId": "10393709391193498677"
+    },
+    {
+      "id": "n_19074280",
+      "type": "video",
+      "name": "视频 1",
+      "position": {
+        "x": 674.9761787904001,
+        "y": 70.59061442969598
+      },
+      "width": 420,
+      "params": {
+        "prompt": "",
+        "model": "seedance-2.0",
+        "modelName": "即梦 Seedance 2.0",
+        "ratio": "16:9",
+        "resolution": "720P",
+        "duration": 4,
+        "mode": "全能参考",
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "video",
+          "resourceId": null,
+          "url": null
+        }
+      ],
+      "status": "idle",
+      "progress": 0
+    },
+    {
+      "id": "n_707aee6c",
+      "type": "image",
+      "name": "图片 2",
+      "position": {
+        "x": -68.18356314462262,
+        "y": 346.6600700645732
+      },
+      "width": 340,
+      "params": {
+        "prompt": "",
+        "model": "jimeng-4.0",
+        "modelName": "即梦图片4.0",
+        "ratio": "16:9",
+        "size": "1K",
+        "count": 1,
+        "refResourceId": null,
+        "big": false
+      },
+      "outputs": [
+        {
+          "name": "image",
+          "resourceId": "c7c38f80-e9cb-470d-bed8-55f00b54e3cc",
+          "url": "/api/assets/c7c38f80-e9cb-470d-bed8-55f00b54e3cc.jpg",
+          "kind": "image",
+          "mime": "image/jpeg",
+          "mock": false,
+          "ts": 1789626374859
+        }
+      ],
+      "status": "success",
+      "progress": 100,
+      "taskId": "10669326969531330953",
+      "history": [
+        {
+          "name": "image",
+          "resourceId": "b08446fe-d139-4422-86dc-243dedf68b51",
+          "url": "/api/assets/b08446fe-d139-4422-86dc-243dedf68b51.jpg",
+          "kind": "image",
+          "mime": "image/jpeg",
+          "mock": false,
+          "ts": 1789625882016
+        },
+        {
+          "name": "image",
+          "resourceId": "dc5f6746-e4d8-49a1-9b03-d00547223cc9",
+          "url": "/api/assets/dc5f6746-e4d8-49a1-9b03-d00547223cc9.jpg",
+          "kind": "image",
+          "mime": "image/jpeg",
+          "mock": false,
+          "ts": 1789633682251
+        }
+      ]
+    },
+    {
+      "id": "n_db5a251c",
+      "type": "video",
+      "name": "视频 2",
+      "position": {
+        "x": 722.41178624,
+        "y": 414.92596224000016
+      },
+      "width": 420,
+      "params": {
+        "prompt": "@图片 2 动漫风格，男人在放下酒杯，看向镜头右侧，",
+        "model": "seedance-2.5",
+        "modelName": "即梦 Seedance 2.5",
+        "ratio": "16:9",
+        "resolution": "480P",
+        "duration": 4,
+        "mode": "全能参考",
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "video",
+          "resourceId": "v_mu4xyndsdczm",
+          "url": "/api/assets/v_mu4xyndsdczm.mp4",
+          "kind": "video",
+          "mime": "video/mp4",
+          "mock": false
+        }
+      ],
+      "status": "success",
+      "progress": 100,
+      "taskId": "cgt-20260917105711-jyntz"
+    },
+    {
+      "id": "n_1e697933",
+      "type": "image",
+      "name": "图片 2 副本",
+      "position": {
+        "x": -68.18356314462262,
+        "y": 710.6600700645731
+      },
+      "width": 340,
+      "params": {
+        "prompt": "动漫风格，男人在放下酒杯，看向镜头右侧，",
+        "model": "jimeng-4.0",
+        "modelName": "即梦图片4.0",
+        "ratio": "16:9",
+        "size": "1K",
+        "count": 1,
+        "refResourceId": null,
+        "big": false
+      },
+      "outputs": [
+        {
+          "name": "image",
+          "resourceId": "8f5b5e12-0fe4-4451-9074-5a785ca7dc06",
+          "url": "/api/assets/8f5b5e12-0fe4-4451-9074-5a785ca7dc06.jpg",
+          "kind": "image",
+          "mime": "image/jpeg",
+          "mock": false
+        }
+      ],
+      "status": "success",
+      "progress": 100,
+      "taskId": "5144472453481350222",
+      "error": null,
+      "history": [],
+      "lastRunKey": "[\"动漫风格，男人在放下酒杯，看向镜头右侧，\",null,\"\"]",
+      "lastRunAt": 1789625104594
+    },
+    {
+      "id": "n_43d1be5e",
+      "type": "video",
+      "name": "视频 2 副本",
+      "position": {
+        "x": 722.41178624,
+        "y": 735.3281736704001
+      },
+      "width": 420,
+      "params": {
+        "prompt": "@图片 2 动漫风格，男人在放下酒杯，看向镜头右侧，像是看到了初恋的表情，深情流露",
+        "model": "seedance-2.0",
+        "modelName": "即梦 Seedance 2.0",
+        "ratio": "16:9",
+        "resolution": "480P",
+        "duration": 4,
+        "mode": "全能参考",
+        "refResourceId": null,
+        "big": false
+      },
+      "outputs": [
+        {
+          "name": "video",
+          "resourceId": "v_mu54savgz42k",
+          "url": "/api/assets/v_mu54savgz42k.mp4",
+          "kind": "video",
+          "mime": "video/mp4",
+          "mock": false,
+          "ts": 1789626574372
+        }
+      ],
+      "status": "success",
+      "progress": 100,
+      "taskId": "cgt-20260917140841-h5aln",
+      "error": null,
+      "history": [
+        {
+          "name": "video",
+          "resourceId": "v_mu54u4a4umvx",
+          "url": "/api/assets/v_mu54u4a4umvx.mp4",
+          "kind": "video",
+          "mime": "video/mp4",
+          "mock": false,
+          "ts": 1789626587814
+        }
+      ],
+      "lastRunKey": "[\"@图片 2 动漫风格，男人在放下酒杯，看向镜头右侧，像是看到了初恋的表情，深情流露\",null,\"[object Object]\"]",
+      "lastRunAt": 1789625307758
+    },
+    {
+      "id": "n_ade30d35",
+      "type": "image",
+      "name": "视频 2·帧·00:01.9",
+      "position": {
+        "x": 1365.3260367346936,
+        "y": 710.6600700645731
+      },
+      "width": 340,
+      "params": {
+        "prompt": "",
+        "model": "jimeng-4.6",
+        "modelName": "即梦图片4.6",
+        "ratio": "16:9",
+        "size": "2K",
+        "count": 1,
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "out",
+          "resourceId": "e5759fa2-2521-4f67-b606-4017fda0eaeb",
+          "url": "/api/assets/e5759fa2-2521-4f67-b606-4017fda0eaeb.jpg",
+          "kind": "image",
+          "mime": "image/jpeg",
+          "ts": 1789633574230
+        }
+      ],
+      "status": "success",
+      "progress": 100
+    },
+    {
+      "id": "n_c0221faa",
+      "type": "image",
+      "name": "视频 2·帧·00:00.2",
+      "position": {
+        "x": 1373.3260367346936,
+        "y": 32.925962240000274
+      },
+      "width": 340,
+      "params": {
+        "prompt": "",
+        "model": "jimeng-4.6",
+        "modelName": "即梦图片4.6",
+        "ratio": "1:1",
+        "size": "2K",
+        "count": 1,
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "out",
+          "resourceId": "d06097a8-3c15-48a6-bf44-f3ce8afbc644",
+          "url": "/api/assets/d06097a8-3c15-48a6-bf44-f3ce8afbc644.jpg",
+          "kind": "image",
+          "mime": "image/jpeg",
+          "ts": 1789633601692
+        }
+      ],
+      "status": "success",
+      "progress": 100
+    },
+    {
+      "id": "n_bdf6e8bc",
+      "type": "video",
+      "name": "视频 3",
+      "position": {
+        "x": 1426,
+        "y": 385.32817367040013
+      },
+      "width": 420,
+      "params": {
+        "prompt": "",
+        "model": "seedance-2.0",
+        "modelName": "即梦 Seedance 2.0",
+        "ratio": "16:9",
+        "resolution": "720P",
+        "duration": 4,
+        "mode": "全能参考",
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "video",
+          "resourceId": null,
+          "url": null
+        }
+      ],
+      "status": "idle",
+      "progress": 0
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_c654442c",
+      "source": "n_1be995fc",
+      "target": "n_19074280",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_d7b1d218",
+      "source": "n_707aee6c",
+      "target": "n_db5a251c",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_33359273",
+      "source": "n_707aee6c",
+      "target": "n_43d1be5e",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_fff76149",
+      "source": "n_db5a251c",
+      "target": "n_ade30d35",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_d127183b",
+      "source": "n_db5a251c",
+      "target": "n_c0221faa",
+      "sourcePort": "out",
+      "targetPort": "in"
+    },
+    {
+      "id": "e_99dc08b3",
+      "source": "n_19074280",
+      "target": "n_bdf6e8bc",
+      "sourcePort": "out",
+      "targetPort": "in"
+    }
+  ],
+  "createdAt": 1789565300479,
+  "updatedAt": 1791557553572
+}

@@ -1,0 +1,207 @@
+/* ============ 节点卡片 ============ */
+.canvas-node {
+  position: absolute; transform-origin: 0 0;
+  width: var(--node-w, 320px);
+  background: transparent; border-radius: 14px;
+  will-change: transform;
+}
+.canvas-node.selected .node-frame { border-color: #e0e0e0; box-shadow: 0 0 0 1px #e0e0e0, 0 14px 40px rgba(0,0,0,.55); }
+/* 选中节点（含其下一级提示词面板）整体置顶，不被相邻节点遮挡 */
+.canvas-node.selected { z-index: 30; }
+.canvas-node.running .node-frame { border-color: var(--running); box-shadow: 0 0 0 1px var(--running), 0 0 24px var(--accent-glow); animation: pulse 1.4s ease-in-out infinite; }
+.canvas-node.success .node-frame { border-color: rgba(76, 212, 124, .75); }
+.canvas-node.failed .node-frame { border-color: var(--danger); box-shadow: 0 0 0 1px var(--danger); }
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 1px var(--running), 0 0 12px rgba(77,163,255,.2);} 50% { box-shadow: 0 0 0 1px var(--running), 0 0 30px rgba(77,163,255,.5);} }
+
+.node-title {
+  display: flex; align-items: center; gap: 7px; padding: 8px 10px; margin-bottom: 6px;
+  color: var(--text); font-size: 13.5px; cursor: grab;
+}
+.node-title:active { cursor: grabbing; }
+.nt-icon { display: flex; opacity: .95; }
+.nt-icon svg { width: 16px; height: 16px; }
+.nt-name { font-weight: 500; }
+.nt-status { font-size: 11px; margin-left: 6px; padding: 1px 7px; border-radius: 8px; display: none; }
+.canvas-node[data-status="running"] .nt-status { display: inline; background: rgba(77,163,255,.18); color: var(--running); }
+/* 生成成功不再显示「完成」徽标（保留绿色边框提示即可） */
+.canvas-node[data-status="failed"] .nt-status { display: inline; background: rgba(255,91,91,.15); color: var(--danger); }
+.canvas-node[data-status="skipped"] .nt-status { display: inline; background: var(--bg-hover); color: var(--text-dim); }
+/* 节点级取消生成按钮（生成中出现） */
+.nt-cancel { display: none; margin-left: 4px; cursor: pointer; color: var(--danger); font-size: 12px; font-weight: 600; padding: 1px 8px; border-radius: 8px; background: rgba(255, 91, 91, 0.14); box-shadow: inset 0 0 0 1px rgba(255, 91, 91, 0.35); transition: all .15s; }
+.canvas-node[data-status="running"] .nt-cancel { display: inline; }
+.nt-cancel:hover { background: rgba(255, 91, 91, 0.3); }
+.nt-progress { display: none; margin-left: auto; font-size: 11px; color: var(--running); }
+.canvas-node[data-status="running"] .nt-progress { display: inline; }
+.nt-pin { margin-left: auto; color: var(--text-dim); cursor: pointer; display: flex; padding: 2px; }
+.canvas-node.pinned .nt-pin { color: var(--accent); }
+.nt-pin svg { width: 14px; height: 14px; }
+.nt-pin:hover { color: var(--text); }
+
+.node-frame { position: relative; border-radius: 14px; transition: box-shadow .15s, border-color .15s; }
+.node-card {
+  position: relative; border-radius: 14px; overflow: hidden;
+  background: linear-gradient(160deg, #232323, #1b1b1b);
+  border: 1px solid #3a3a3a;
+  height: var(--card-h, 300px);
+  display: flex; align-items: center; justify-content: center;
+}
+.node-card .card-empty { color: #565656; display: flex; }
+.node-card .card-empty svg { width: 30px; height: 30px; }
+.node-card img, .node-card video { width: 100%; height: 100%; object-fit: contain; display: block; background: #111; }
+.node-card audio { width: 90%; }
+.node-card .text-content {
+  width: 100%; height: 100%; padding: 14px; overflow: auto; font-size: 13px; line-height: 1.7;
+  color: var(--text); white-space: pre-wrap; word-break: break-all; user-select: text;
+}
+.node-card .card-badge {
+  position: absolute; top: 8px; right: 8px; font-size: 10px; padding: 2px 8px; border-radius: 8px;
+  background: rgba(0,0,0,.45); color: #ddd; pointer-events: none;
+}
+.node-card .progress-bar {
+  position: absolute; bottom: 0; left: 0; height: 3px; width: 0%;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6); transition: width .3s;
+}
+
+/* 端口 */
+.node-port {
+  position: absolute; top: 50%; transform: translate(-50%, -50%);
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--bg-panel-2); border: 1.5px solid #5a5a5a; color: var(--text-dim);
+  display: flex; align-items: center; justify-content: center; font-size: 15px;
+  cursor: crosshair; z-index: 5; transition: all .12s;
+}
+.node-port:hover { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 10px var(--accent-glow); }
+.node-port.port-out { left: 100%; }
+.node-port.port-in { left: 0; }
+.node-port.port-in.connected { color: var(--accent); border-color: var(--accent); }
+.node-port .port-dot { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+
+/* ============ 卡片悬浮操作：拉大 / 全屏 ============ */
+.card-acts {
+  position: absolute; top: 8px; right: 8px; z-index: 6;
+  display: flex; gap: 6px; opacity: 0; transition: opacity .15s;
+}
+.node-card:hover .card-acts { opacity: 1; }
+
+/* ============ 生成历史条：左上角小缩略图（点击切换主显示） ============ */
+.card-history {
+  position: absolute; top: 6px; left: 6px; z-index: 5;
+  display: flex; gap: 4px; align-items: center;
+  max-width: calc(100% - 80px); overflow-x: auto; padding: 2px;
+  scrollbar-width: none; pointer-events: auto;
+}
+.card-history::-webkit-scrollbar { display: none; }
+.card-history .ch-item {
+  width: 36px; height: 26px; object-fit: cover; border-radius: 5px; cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, .28); flex: 0 0 auto; background: #111;
+  transition: border-color .15s, transform .15s;
+}
+.card-history .ch-item:hover { transform: translateY(-1px); border-color: rgba(255, 255, 255, .6); }
+.card-history .ch-item.ch-cur { border-color: var(--accent); box-shadow: 0 0 6px var(--accent-glow, rgba(80, 150, 255, .5)); }
+.card-history .ch-video {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 600; color: #fff; background: rgba(10, 12, 16, .68);
+}
+.card-history .ch-count {
+  flex: 0 0 auto; margin-left: 2px; font-size: 10px; color: rgba(255, 255, 255, .82);
+  background: rgba(10, 12, 16, .55); padding: 1px 6px; border-radius: 8px; white-space: nowrap;
+}
+.ca-btn {
+  width: 28px; height: 28px; border-radius: 8px; cursor: pointer;
+  background: rgba(12, 15, 20, .74); color: #dfe5ee;
+  border: 1px solid rgba(255, 255, 255, .16);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; line-height: 1; padding: 0;
+}
+.ca-btn:hover { background: rgba(46, 54, 68, .92); border-color: rgba(255, 255, 255, .3); }
+
+/* 全屏预览 */
+#lightbox {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(4, 7, 11, .88);
+  display: flex; align-items: center; justify-content: center;
+  animation: lb-fade .16s ease;
+}
+@keyframes lb-fade { from { opacity: 0; } to { opacity: 1; } }
+#lightbox .lb-inner { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+#lightbox .lb-title { color: #d7dde8; font-size: 15px; letter-spacing: .5px; }
+#lightbox .lb-title .lb-sub { color: #8b93a3; font-size: 12px; margin-left: 6px; }
+#lightbox img, #lightbox video {
+  max-width: 92vw; max-height: 82vh;
+  border-radius: 12px; box-shadow: 0 16px 60px rgba(0, 0, 0, .55);
+  background: #101318;
+}
+#lightbox .lb-close {
+  position: absolute; top: 16px; right: 20px;
+  width: 36px; height: 36px; border-radius: 10px; cursor: pointer;
+  background: rgba(20, 24, 32, .8); color: #dfe5ee;
+  border: 1px solid rgba(255, 255, 255, .18); font-size: 16px;
+}
+#lightbox .lb-close:hover { background: rgba(60, 68, 84, .95); }
+
+/* ============ 抽帧面板：预览 + 缩略图胶片条 + 播放头滑选 ============ */
+#framePicker {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(4, 7, 11, .88);
+  display: flex; align-items: center; justify-content: center;
+  animation: lb-fade .16s ease;
+}
+#framePicker .fp-inner {
+  display: flex; flex-direction: column; gap: 10px;
+  width: min(1040px, 94vw); padding: 14px 16px 12px;
+  background: #12151b; border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 14px; box-shadow: 0 18px 70px rgba(0, 0, 0, .6);
+}
+#framePicker .fp-head { display: flex; align-items: center; justify-content: space-between; }
+#framePicker .fp-title { color: #d7dde8; font-size: 14px; }
+#framePicker .fp-title .fp-sub { color: #8b93a3; font-size: 12px; margin-left: 6px; }
+#framePicker .fp-close {
+  width: 30px; height: 30px; border-radius: 8px; cursor: pointer;
+  background: rgba(20, 24, 32, .8); color: #dfe5ee; border: 1px solid rgba(255, 255, 255, .18); font-size: 14px;
+}
+#framePicker .fp-close:hover { background: rgba(60, 68, 84, .95); }
+#framePicker .fp-close2 { position: absolute; top: 16px; right: 20px; width: 36px; height: 36px; font-size: 16px; }
+#framePicker .fp-video {
+  width: 100%; max-height: 58vh; background: #0a0d11;
+  border-radius: 10px; object-fit: contain;
+}
+/* 胶片条 */
+#framePicker .fp-strip-wrap { display: flex; flex-direction: column; gap: 6px; }
+#framePicker .fp-strip {
+  position: relative; display: flex; gap: 2px; height: 64px;
+  background: #0a0d11; border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 8px; padding: 2px; overflow: hidden;
+  cursor: ew-resize; touch-action: none; user-select: none;
+}
+#framePicker .fp-thumb {
+  flex: 1 1 0; min-width: 0; height: 100%; object-fit: cover;
+  border-radius: 3px; opacity: .85; pointer-events: auto;
+}
+#framePicker .fp-thumb:hover { opacity: 1; }
+/* 绿色播放头（对齐参考稿样式） */
+#framePicker .fp-playhead {
+  position: absolute; top: 0; bottom: 0; width: 0; z-index: 3;
+  pointer-events: none;
+}
+#framePicker .fp-playhead i {
+  position: absolute; top: -2px; bottom: -2px; left: -1.5px; width: 3px;
+  background: #3ddc84; border-radius: 2px;
+  box-shadow: 0 0 6px rgba(61, 220, 132, .8);
+}
+#framePicker .fp-playhead i::before {
+  content: ''; position: absolute; top: -5px; left: 50%; transform: translateX(-50%);
+  width: 0; height: 0; border: 5px solid transparent; border-top-color: #3ddc84;
+}
+#framePicker .fp-hint { color: #77808f; font-size: 11px; }
+/* 底部操作条 */
+#framePicker .fp-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+#framePicker .fp-time { color: #3ddc84; font-size: 14px; font-variant-numeric: tabular-nums; min-width: 64px; }
+#framePicker .fp-acts { display: flex; gap: 8px; }
+#framePicker .fp-btn {
+  padding: 6px 14px; border-radius: 8px; cursor: pointer; font-size: 12px;
+  background: rgba(255, 255, 255, .07); color: #dfe5ee; border: 1px solid rgba(255, 255, 255, .16);
+}
+#framePicker .fp-btn:hover:not(:disabled) { background: rgba(255, 255, 255, .14); }
+#framePicker .fp-btn:disabled { opacity: .45; cursor: default; }
+#framePicker .fp-primary { background: #2f7d54; border-color: #3ddc84; color: #eafff3; }
+#framePicker .fp-primary:hover:not(:disabled) { background: #379463; }

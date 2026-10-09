@@ -1,0 +1,78 @@
+{
+  "id": "21dd2aef-5b67-46e4-8df6-3ffb47c096e9",
+  "name": "未命名项目",
+  "nodes": [
+    {
+      "id": "n_0f54095e",
+      "type": "image",
+      "name": "图片源",
+      "position": {
+        "x": 100,
+        "y": 100
+      },
+      "width": 340,
+      "params": {
+        "prompt": "一只橘猫",
+        "model": "jimeng-4.6",
+        "modelName": "即梦图片4.6",
+        "ratio": "1:1",
+        "size": "2K",
+        "count": 1,
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "out",
+          "resourceId": "img-r1",
+          "url": "/api/assets/img-r1.png",
+          "kind": "image",
+          "mime": "image/png"
+        }
+      ],
+      "status": "idle",
+      "progress": 0
+    },
+    {
+      "id": "n_f188392f",
+      "type": "video",
+      "name": "视频节点",
+      "position": {
+        "x": 500,
+        "y": 100
+      },
+      "width": 420,
+      "params": {
+        "prompt": "让猫动起来",
+        "model": "seedance-2.0",
+        "modelName": "即梦 Seedance 2.0",
+        "ratio": "16:9",
+        "resolution": "720P",
+        "duration": 4,
+        "mode": "全能参考",
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "video",
+          "resourceId": null,
+          "url": null
+        }
+      ],
+      "status": "idle",
+      "progress": 0,
+      "lastRunKey": "[\"让猫动起来\",null,\"[object Object]\"]",
+      "lastRunAt": 1789625818029
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_594d8abb",
+      "source": "n_0f54095e",
+      "target": "n_f188392f",
+      "sourcePort": "out",
+      "targetPort": "in"
+    }
+  ],
+  "createdAt": 1789625820965,
+  "updatedAt": 1789625820987
+}

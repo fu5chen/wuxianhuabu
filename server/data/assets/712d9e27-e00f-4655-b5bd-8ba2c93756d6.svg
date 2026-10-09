@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <g>
+    <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==" x="0" y="0" width="960" height="540" preserveAspectRatio="xMidYMid slice">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -48 -22; 0 0" dur="4s" repeatCount="indefinite"/>
+    </image>
+  </g>
+  <rect x="0" y="476" width="960" height="64" fill="#000000" fill-opacity="0.45"/>
+  <text x="480" y="514" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="20" fill="#ffffff" fill-opacity="0.95">图生视频 · 让画面缓慢推进 · 即梦 Seedance 2.0 · 720P · 4s（模拟运镜）</text>
+</svg>

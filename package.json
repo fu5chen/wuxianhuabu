@@ -1,0 +1,10 @@
+{
+  "name": "wuxianhuabu",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "无限画布 — AI 节点式工作台",
+  "scripts": {
+    "start": "node server/server.mjs"
+  }
+}

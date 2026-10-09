@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>无限画布 — AI 节点式工作台</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='9' fill='%234da3ff'/></svg>">
+<link rel="stylesheet" href="./styles/main.css" />
+<link rel="stylesheet" href="./styles/nodes.css" />
+<link rel="stylesheet" href="./styles/panels.css" />
+</head>
+<body>
+  <!-- 顶栏 -->
+  <header class="topbar">
+    <div class="tb-left">
+      <span class="tb-project-dot"></span>
+      <input id="projectName" class="tb-project-name" value="未命名项目" spellcheck="false" />
+      <div class="tb-menu">
+        <button id="btnProjects" class="tb-btn" title="项目列表">项目 ▾</button>
+        <div id="projectListPanel" class="dropdown-panel hidden"></div>
+      </div>
+    </div>
+    <div class="tb-right">
+      <button id="btnRun" class="tb-btn tb-run" title="运行工作流 (Ctrl+Enter)">▶ 运行</button>
+      <button id="btnSave" class="tb-btn" title="保存项目 (Ctrl+S)">保存</button>
+      <button id="btnTunnel" class="tb-btn tunnel-off" title="临时隧道（ngrok）：本地素材入库时开启，用完关闭">⛓ 隧道</button>
+      <span class="tb-credits" title="积分余额">✦ <b id="creditsNum">--</b></span>
+      <span class="tb-avatar" id="userAvatar" title="演示用户">U</span>
+    </div>
+  </header>
+
+  <!-- 左侧工具栏 -->
+  <aside class="toolbar" id="toolbar"></aside>
+
+  <!-- 画布区 -->
+  <main class="canvas-wrap" id="canvasWrap">
+    <canvas id="gridCanvas" class="grid-canvas"></canvas>
+    <svg id="edgeLayer" class="edge-layer"></svg>
+    <div id="nodeLayer" class="node-layer"></div>
+    <div id="marquee" class="marquee hidden"></div>
+
+    <!-- 双击空白提示 -->
+    <div id="emptyHint" class="empty-hint">
+      <span>双击画布</span>
+      <svg viewBox="0 0 24 24" width="20" height="20"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+      <span>创建节点</span>
+    </div>
+
+    <!-- 小地图 -->
+    <div id="minimap" class="minimap">
+      <canvas id="minimapCanvas" width="150" height="100"></canvas>
+    </div>
+
+    <!-- 缩放控制 -->
+    <div class="zoom-ctrl">
+      <button id="zoomOut">−</button>
+      <button id="zoomReset" title="重置视图">⌂</button>
+      <button id="zoomIn">＋</button>
+    </div>
+  </main>
+
+  <!-- 新建节点菜单（双击画布 / 拖线到空白） -->
+  <div id="nodeMenu" class="node-menu hidden">
+    <div class="nm-title" id="nodeMenuTitle">新建节点</div>
+    <div class="nm-list" id="nodeMenuList"></div>
+    <div class="nm-sep"></div>
+    <div class="nm-list">
+      <div class="nm-item" data-action="from-library"><span class="nm-icon">🗂</span>从资产库添加</div>
+      <div class="nm-item" data-action="upload-local"><span class="nm-icon">⬆</span>本地上传</div>
+    </div>
+  </div>
+
+  <!-- 右键菜单 -->
+  <div id="ctxMenu" class="node-menu hidden">
+    <div class="nm-list" id="ctxMenuList"></div>
+  </div>
+
+  <!-- 资产库面板 -->
+  <div id="assetPanel" class="asset-panel hidden">
+    <div class="ap-head">资产库 <button id="assetClose" class="ap-close">✕</button></div>
+    <div class="ap-grid" id="assetGrid"></div>
+  </div>
+
+  <!-- AI 对话 -->
+  <div id="aiChat" class="ai-chat">
+    <div class="ai-panel hidden" id="aiPanel">
+      <div class="ai-head">AI 助手 <span class="ai-sub">画布指令</span></div>
+      <div class="ai-msgs" id="aiMsgs"></div>
+      <div class="ai-input-row">
+        <input id="aiInput" placeholder="试试：创建一个图片节点 / 连接图片1到视频1 / 运行" />
+        <button id="aiSend">发送</button>
+      </div>
+      <div class="ai-tips">
+        <span data-cmd="创建一个图片节点">创建图片节点</span>
+        <span data-cmd="创建一个视频节点">创建视频节点</span>
+        <span data-cmd="连接图片1到视频1">连线示例</span>
+        <span data-cmd="清空画布">清空画布</span>
+      </div>
+    </div>
+    <button id="aiToggle" class="ai-toggle">💬 与 AI 对话</button>
+  </div>
+
+  <!-- 底部工具栏：快捷键帮助 -->
+  <div class="bottom-bar">
+    <button id="btnShortcuts" title="快捷键">?</button>
+  </div>
+
+  <!-- 快捷键面板 -->
+  <div id="shortcutPanel" class="shortcut-panel hidden">
+    <button class="sp-close">✕</button>
+    <div class="sp-col">
+      <div class="sp-head">创作</div>
+      <div class="sp-row"><span>成组</span><span class="key">Ctrl/Alt</span><span class="key">G</span></div>
+      <div class="sp-row"><span>解组</span><span class="key">Ctrl/Alt</span><span class="key">Shift</span><span class="key">G</span></div>
+      <div class="sp-row"><span>连线</span><span class="key">Ctrl</span><span class="key">L</span><span class="plus">或选中后按 L</span></div>
+      <div class="sp-row"><span>复制节点和连线</span><span class="key">Ctrl</span><span class="key">D</span></div>
+      <div class="sp-row"><span>生成</span><span class="key">Ctrl</span><span class="key">Enter</span></div>
+      <div class="sp-row"><span>新建节点</span><span class="key">Tab</span></div>
+      <div class="sp-row"><span>节点复制</span><span class="key">Alt</span><span class="plus">+拖动节点</span></div>
+      <div class="sp-row"><span>创建副本</span><span class="key">Ctrl</span><span class="key">Alt</span><span class="plus">+拖动</span></div>
+      <div class="sp-row"><span>重命名节点</span><span class="plus">双击节点名称</span></div>
+      <div class="sp-row"><span>下载结果</span><span class="plus">节点标题 ⬇</span></div>
+    </div>
+    <div class="sp-col">
+      <div class="sp-head">缩放</div>
+      <div class="sp-row"><span>放大</span><span class="key">Ctrl</span><span class="key">+</span></div>
+      <div class="sp-row"><span>缩小</span><span class="key">Ctrl</span><span class="key">−</span></div>
+      <div class="sp-row"><span>适应画布</span><span class="key">Ctrl</span><span class="key">0</span></div>
+      <div class="sp-row" style="margin-top:22px"><span>整理画布</span><span class="key">Alt</span><span class="key">Shift</span><span class="key">F</span></div>
+      <div class="sp-row"><span>节点搜索</span><span class="key">Ctrl</span><span class="key">F</span></div>
+    </div>
+    <div class="sp-col">
+      <div class="sp-head">移动画布</div>
+      <div class="sp-row"><span>键盘</span><span class="key">Space</span><span class="plus">+拖动</span></div>
+      <div class="sp-row"><span>移动</span><span class="key">V</span></div>
+      <div class="sp-row"><span>抓手工具</span><span class="key">H</span></div>
+      <div class="sp-row"><span>拖动画布</span><span class="key">Ctrl</span><span class="plus">+左键拖动</span></div>
+      <div class="sp-row"><span>拖动画布</span><span class="plus">中键 / Alt+左键拖动</span></div>
+    </div>
+    <div class="sp-col">
+      <div class="sp-head">其他</div>
+      <div class="sp-row"><span>撤销</span><span class="key">Ctrl</span><span class="key">Z</span></div>
+      <div class="sp-row"><span>重做</span><span class="key">Ctrl</span><span class="key">Shift</span><span class="key">Z</span></div>
+      <div class="sp-row"><span>删除</span><span class="key">Del</span></div>
+      <div class="sp-row"><span>保存</span><span class="key">Ctrl</span><span class="key">S</span></div>
+      <div class="sp-row"><span>多选</span><span class="key">Ctrl/Shift</span><span class="plus">+点击</span></div>
+      <div class="sp-row"><span>框选</span><span class="plus">左键拖动空白（Shift 加选）</span></div>
+      <div class="sp-row"><span>粘贴图片</span><span class="key">Ctrl</span><span class="key">V</span></div>
+    </div>
+  </div>
+
+  <!-- 节点搜索（Ctrl+F） -->
+  <div id="searchPanel" class="search-panel hidden">
+    <div class="sp-search-head">
+      <input id="searchInput" placeholder="搜索节点名称或提示词，回车定位第一个…" spellcheck="false" />
+      <button class="sp-close">✕</button>
+    </div>
+    <div id="searchList" class="sp-list"></div>
+  </div>
+
+  <input type="file" id="fileInput" class="hidden" multiple accept="image/*,video/*,audio/*" />
+  <div id="toast" class="toast hidden"></div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

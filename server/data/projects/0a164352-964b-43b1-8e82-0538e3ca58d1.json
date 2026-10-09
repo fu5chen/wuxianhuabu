@@ -1,0 +1,40 @@
+{
+  "id": "0a164352-964b-43b1-8e82-0538e3ca58d1",
+  "name": "未命名项目",
+  "nodes": [
+    {
+      "id": "n_974a59ba",
+      "type": "video",
+      "name": "测试视频",
+      "position": {
+        "x": 300,
+        "y": 200
+      },
+      "width": 420,
+      "params": {
+        "prompt": "动画",
+        "model": "seedance-2.0",
+        "modelName": "即梦 Seedance 2.0",
+        "ratio": "16:9",
+        "resolution": "720P",
+        "duration": 4,
+        "mode": "全能参考",
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "out",
+          "resourceId": "628991c4-12b5-424a-aa44-2a01a00281c6",
+          "url": "/api/assets/628991c4-12b5-424a-aa44-2a01a00281c6.webm",
+          "kind": "video",
+          "mime": "video/webm"
+        }
+      ],
+      "status": "success",
+      "progress": 100
+    }
+  ],
+  "edges": [],
+  "createdAt": 1789631749218,
+  "updatedAt": 1789631749241
+}

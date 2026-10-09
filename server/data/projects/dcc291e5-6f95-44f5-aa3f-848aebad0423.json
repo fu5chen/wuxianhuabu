@@ -1,0 +1,106 @@
+{
+  "id": "dcc291e5-6f95-44f5-aa3f-848aebad0423",
+  "name": "自动保存测试",
+  "nodes": [
+    {
+      "id": "n_cee0bde3",
+      "type": "image",
+      "name": "图片 1",
+      "position": {
+        "x": 100,
+        "y": 100
+      },
+      "width": 340,
+      "params": {
+        "prompt": "自动保存提示词",
+        "model": "jimeng-4.6",
+        "modelName": "即梦图片4.6",
+        "ratio": "1:1",
+        "size": "2K",
+        "count": 1,
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "image",
+          "resourceId": null,
+          "url": null
+        }
+      ],
+      "status": "idle",
+      "progress": 0
+    },
+    {
+      "id": "n_f060fdd3",
+      "type": "text",
+      "name": "文本 1",
+      "position": {
+        "x": 400,
+        "y": 500
+      },
+      "width": 300,
+      "params": {
+        "prompt": "",
+        "model": "llm-lite"
+      },
+      "outputs": [
+        {
+          "name": "text",
+          "resourceId": null,
+          "url": null
+        }
+      ],
+      "status": "idle",
+      "progress": 0
+    },
+    {
+      "id": "n_10b9822f",
+      "type": "text",
+      "name": "文本 2",
+      "position": {
+        "x": 460,
+        "y": 500
+      },
+      "width": 300,
+      "params": {
+        "prompt": "",
+        "model": "llm-lite"
+      },
+      "outputs": [
+        {
+          "name": "text",
+          "resourceId": null,
+          "url": null
+        }
+      ],
+      "status": "idle",
+      "progress": 0
+    },
+    {
+      "id": "n_195346d8",
+      "type": "text",
+      "name": "文本 3",
+      "position": {
+        "x": 520,
+        "y": 500
+      },
+      "width": 300,
+      "params": {
+        "prompt": "",
+        "model": "llm-lite"
+      },
+      "outputs": [
+        {
+          "name": "text",
+          "resourceId": null,
+          "url": null
+        }
+      ],
+      "status": "idle",
+      "progress": 0
+    }
+  ],
+  "edges": [],
+  "createdAt": 1789558071681,
+  "updatedAt": 1789558084671
+}

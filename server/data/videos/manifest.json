@@ -1,0 +1,53 @@
+[
+  {
+    "id": "v_mu54u4a4umvx",
+    "taskId": "cgt-20260917140841-h5aln",
+    "name": "视频 2 副本",
+    "model": "doubao-seedance-2-5-260628",
+    "taskType": "全能参考",
+    "duration": 4,
+    "nodeId": "n_43d1be5e",
+    "fileName": "1789625534764_cgt-20260917140841-h5aln.mp4",
+    "file": "D:\\wuxianhuabu\\server\\data\\videos\\1789625534764_cgt-20260917140841-h5aln.mp4",
+    "url": "/api/videos/file/1789625534764_cgt-20260917140841-h5aln.mp4",
+    "mime": "video/mp4",
+    "size": 4019408,
+    "createdAt": 1789625534768,
+    "assetId": "v_mu54u4a4umvx",
+    "assetUrl": "/api/assets/v_mu54u4a4umvx.mp4"
+  },
+  {
+    "id": "v_mu54savgz42k",
+    "taskId": "cgt-20260917140535-7qktm",
+    "name": "视频 2 副本",
+    "model": "doubao-seedance-2-5-260628",
+    "taskType": "全能参考",
+    "duration": 4,
+    "nodeId": "n_43d1be5e",
+    "fileName": "1789625449996_cgt-20260917140535-7qktm.mp4",
+    "file": "D:\\wuxianhuabu\\server\\data\\videos\\1789625449996_cgt-20260917140535-7qktm.mp4",
+    "url": "/api/videos/file/1789625449996_cgt-20260917140535-7qktm.mp4",
+    "mime": "video/mp4",
+    "size": 4518007,
+    "createdAt": 1789625450001,
+    "assetId": "v_mu54savgz42k",
+    "assetUrl": "/api/assets/v_mu54savgz42k.mp4"
+  },
+  {
+    "id": "v_mu4xyndsdczm",
+    "taskId": "cgt-20260917105711-jyntz",
+    "name": "视频 2",
+    "model": "doubao-seedance-2-5-260628",
+    "taskType": "全能参考",
+    "duration": 4,
+    "nodeId": "n_db5a251c",
+    "fileName": "1789613988832_cgt-20260917105711-jyntz.mp4",
+    "file": "D:\\wuxianhuabu\\server\\data\\videos\\1789613988832_cgt-20260917105711-jyntz.mp4",
+    "url": "/api/videos/file/1789613988832_cgt-20260917105711-jyntz.mp4",
+    "mime": "video/mp4",
+    "size": 4260449,
+    "createdAt": 1789613988835,
+    "assetId": "v_mu4xyndsdczm",
+    "assetUrl": "/api/assets/v_mu4xyndsdczm.mp4"
+  }
+]

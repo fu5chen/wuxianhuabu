@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="576" viewBox="0 0 1024 576">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#41295a"/><stop offset="0.55" stop-color="#2f0743"/><stop offset="1" stop-color="#642b73"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="576" fill="url(#g)"/>
+  <circle cx="798.72" cy="138.24" r="126.72" fill="#ffffff" fill-opacity="0.10"/>
+  <circle cx="204.8" cy="449.28000000000003" r="92.16" fill="#ffffff" fill-opacity="0.08"/>
+  
+  <text x="512" y="280" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="32" fill="#ffffff" fill-opacity="0.95">测试保持原图比例</text>
+  <text x="512" y="318" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="18" fill="#ffffff" fill-opacity="0.7">文生图 · 图片 5.0 Lite · 16:9 · 2K</text>
+</svg>

@@ -1,0 +1,40 @@
+{
+  "id": "ffe5af8b-48a1-4741-b830-f8e653d5ab92",
+  "name": "未命名项目",
+  "nodes": [
+    {
+      "id": "n_8eaf72c9",
+      "type": "video",
+      "name": "视频 1",
+      "position": {
+        "x": 390,
+        "y": 300
+      },
+      "width": 420,
+      "params": {
+        "prompt": "一只猫在草地上奔跑",
+        "model": "seedance-2.0",
+        "modelName": "即梦 Seedance 2.0",
+        "ratio": "16:9",
+        "resolution": "720P",
+        "duration": 4,
+        "mode": "全能参考",
+        "refResourceId": null
+      },
+      "outputs": [
+        {
+          "name": "video",
+          "resourceId": null,
+          "url": null
+        }
+      ],
+      "status": "running",
+      "progress": 5,
+      "error": "已取消",
+      "taskId": "cgt-20260917115918-amfjn"
+    }
+  ],
+  "edges": [],
+  "createdAt": 1789617561823,
+  "updatedAt": 1789617564878
+}
